@@ -15,4 +15,4 @@ The interface is styled with CSS for a clean and responsive user experience. HTM
 
 This project is deployed on GitHub Pages:
 
-https://github.com/aadoh14/se_project_todo-app.git
+https://aadoh14.github.io/se_project_todo-app/

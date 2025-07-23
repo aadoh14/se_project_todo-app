@@ -63,11 +63,23 @@ class FormValidator {
     });
   }
 
-  enableValidation() {
+  nableValidation() {
     this._formEl.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
     this.setEventListeners();
+  }
+
+  resetValidation() {
+    // Clear all input errors
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(this._formEl, inputElement);
+      inputElement.value = ""; // Clear the input field
+    });
+
+    // Disable the submit button
+    const buttonElement = this._formEl.querySelector(this._submitButtonSelector);
+    this._toggleButtonState(this._inputList, buttonElement);
   }
 }
 
