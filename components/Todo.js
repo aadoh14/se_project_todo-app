@@ -5,7 +5,7 @@ class Todo {
   }
 
   _setEventListeners() {
-    this._todoCheckboxEl = this._todoElement.querySelector(".todo__completed");
+
     this._todoCheckboxEl.addEventListener("change", (event) => {
       this._data.completed = event.target.checked;
     });
