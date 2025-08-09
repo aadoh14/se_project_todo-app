@@ -24,8 +24,6 @@ class PopupWithForm extends Popup {
         return values;
     }
 
-    open() {
-        super.open();
-    }
+
 }
 export default PopupWithForm;

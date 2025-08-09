@@ -14,9 +14,8 @@ const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 const todosList = document.querySelector(".todos__list");
 
-const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
-console.log("addTodoButton:", addTodoButton);
+const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
 function handleCheck(completed) {
   todoCounter.updateCompleted(completed);
@@ -47,6 +46,10 @@ const section = new Section({
 
 section.renderItems();
 
+
+const newTodoFormValidator = new FormValidator(validationConfig, addTodoForm);
+newTodoFormValidator.enableValidation();
+
 const popupWithForm = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit: (formData) => {
@@ -60,13 +63,13 @@ const popupWithForm = new PopupWithForm({
     todoCounter.updateTotal(true);
   }
 });
+popupWithForm.setEventListeners();
 
 // The logic in this function should all be handled in the Todo class.
 // (generateTodo is already defined above)
 
 
 addTodoButton.addEventListener("click", () => {
-  console.log("Add Todo button clicked");
   popupWithForm.open();
 });
 
