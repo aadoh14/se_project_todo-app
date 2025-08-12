@@ -61,9 +61,10 @@ const popupWithForm = new PopupWithForm({
     };
     section.addItem(generateTodo(newTodo));
     todoCounter.updateTotal(true);
+    newTodoFormValidator.resetValidation(); // Reset validation and disable submit button
   }
 });
-popupWithForm.setEventListeners();
+
 
 // The logic in this function should all be handled in the Todo class.
 // (generateTodo is already defined above)
@@ -73,6 +74,3 @@ addTodoButton.addEventListener("click", () => {
   popupWithForm.open();
 });
 
-addTodoCloseBtn.addEventListener("click", () => {
-  popupWithForm.close();
-});
